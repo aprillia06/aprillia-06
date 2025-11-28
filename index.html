@@ -4,646 +4,358 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEFA SMKN 1 Gondang Nganjuk</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        /* Reset dan Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* CSS Kustom */
+        :root {
+            --primary-color: #0d6efd; /* Biru Standar */
+            --secondary-color: #198754; /* Hijau untuk nuansa Agri */
+            --dark-color: #343a40;
+        }
+
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
-        :root {
-            --primary: #1a5f23;
-            --secondary: #e9b949;
-            --accent: #2c7a3e;
-            --light: #f5f5f5;
-            --dark: #333;
-            --gray: #777;
-        }
-        
-        body {
-            background-color: #f9f9f9;
-            color: var(--dark);
-            line-height: 1.6;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .logo {
+
+        /* Navbar */
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--dark-color) !important;
             display: flex;
             align-items: center;
         }
-        
-        .logo img {
-            height: 60px;
-            margin-right: 15px;
-        }
-        
-        .logo-text h1 {
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-        
-        .logo-text p {
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 25px;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-        
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
+
         /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        .hero-section {
+            /* Menggunakan gambar gedung sekolah (hero-bg.png) */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.png');
             background-size: cover;
             background-position: center;
+            height: 80vh;
             color: white;
-            padding: 100px 0;
-            text-align: center;
-        }
-        
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: var(--dark);
-            padding: 12px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: #d8a83c;
-            transform: translateY(-3px);
-        }
-        
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background-color: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-size: 2rem;
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--secondary);
-        }
-        
-        .about-content {
             display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-        
-        .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Programs Section */
-        .programs {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-        
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .program-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .program-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .program-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .program-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .program-card:hover .program-image img {
-            transform: scale(1.1);
-        }
-        
-        .program-content {
-            padding: 20px;
-        }
-        
-        .program-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        
-        .program-content p {
-            color: var(--gray);
-            margin-bottom: 15px;
-        }
-        
-        .program-link {
-            display: inline-block;
-            color: var(--accent);
-            font-weight: 500;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-        
-        .program-link:hover {
-            text-decoration: underline;
-        }
-        
-        /* TEFA Section */
-        .tefa {
-            padding: 80px 0;
-            background-color: white;
-        }
-        
-        .tefa-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 50px;
-        }
-        
-        .tefa-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-        }
-        
-        .tefa-card {
-            background-color: var(--light);
-            padding: 30px 20px;
-            border-radius: 10px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-        
-        .tefa-card:hover {
-            background-color: var(--primary);
-            color: white;
-            transform: translateY(-5px);
-        }
-        
-        .tefa-card i {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-        
-        .tefa-card:hover i {
-            color: var(--secondary);
-        }
-        
-        .tefa-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-        
-        .contact-container {
-            display: flex;
-            gap: 40px;
-        }
-        
-        .contact-info {
-            flex: 1;
-        }
-        
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-        
-        .contact-details {
-            margin-bottom: 30px;
-        }
-        
-        .contact-detail {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-        
-        .contact-detail i {
-            margin-right: 15px;
-            color: var(--primary);
-            font-size: 1.2rem;
-            margin-top: 3px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-link {
-            display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: var(--dark-color);
         }
         
-        .social-link:hover {
-            background-color: var(--accent);
-            transform: translateY(-3px);
-        }
-        
-        .contact-form {
-            flex: 1;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
+        .section-title::after {
+            content: "";
             display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 10px auto;
         }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
+
+        /* Cards untuk Jurusan */
+        .card-jurusan {
+            transition: transform 0.3s;
             border: none;
-            cursor: pointer;
-            font-size: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+
+        .card-jurusan:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
         
-        .btn-primary:hover {
-            background-color: var(--accent);
+        .card-jurusan .card-img-top {
+            height: 220px; /* Tinggi gambar seragam */
+            object-fit: cover;
+            object-position: center;
         }
-        
+
+        /* Galeri Images */
+        .gallery-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: opacity 0.3s;
+        }
+        .gallery-img:hover {
+            opacity: 0.8;
+        }
+
         /* Footer */
         footer {
-            background-color: var(--dark);
+            background-color: #212529;
             color: white;
-            padding: 60px 0 20px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--secondary);
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #bbb;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--secondary);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            color: #bbb;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .contact-container {
-                flex-direction: column;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul {
-                margin-top: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            nav ul li {
-                margin: 0 10px 10px;
-            }
-            
-            .hero h2 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .programs-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .tefa-cards {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
+            padding: 40px 0 20px;
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <!-- Placeholder untuk logo sekolah -->
-                <div style="width: 60px; height: 60px; background-color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">SMK</div>
-                <div class="logo-text">
-                    <h1>SMKN 1 Gondang Nganjuk</h1>
-                    <p>Teaching Factory</p>
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Beranda</a></li>
-                    <li><a href="#about">Tentang</a></li>
-                    <li><a href="#programs">Jurusan</a></li>
-                    <li><a href="#tefa">Program TEFA</a></li>
-                    <li><a href="#contact">Kontak</a></li>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="Logo SMKN 1 Gondang" height="50" class="d-inline-block align-text-center me-2">
+                SMKN 1 Gondang
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-semibold">
+                    <li class="nav-item"><a class="nav-link active" href="#beranda">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#program">Program TEFA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#jurusan">Jurusan & Unit</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
                 </ul>
-            </nav>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
             </div>
+        </div>
+    </nav>
+
+    <header id="beranda" class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Teaching Factory SMK Negeri 1 Gondang Nganjuk</h1>
+            <p class="lead mt-3 fw-normal">Mempersiapkan Generasi Terampil, Siap Kerja, dan Berwirausaha</p>
+            <a href="#jurusan" class="btn btn-primary btn-lg mt-4 shadow">Lihat Unit TEFA</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="bg-light py-5">
         <div class="container">
-            <h2>Teaching Factory SMKN 1 Gondang Nganjuk</h2>
-            <p>Mempersiapkan Generasi Terampil, Siap Kerja, dan Berwirausaha melalui Pembelajaran Berbasis Produksi</p>
-            <a href="#programs" class="btn">Lihat Program Kami</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>Tentang Kami</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>SMK Negeri 1 Gondang Nganjuk</h3>
-                    <p>SMK Negeri 1 Gondang Nganjuk adalah sekolah menengah kejuruan negeri yang terletak di JL. Raya Gondang-Lengkong, Balong Gebang, Kecamatan Gondang, Kabupaten Nganjuk, Jawa Timur.</p>
-                    <p>Dengan komitmen untuk menghasilkan lulusan yang kompeten dan siap kerja, sekolah ini mengembangkan program Teaching Factory (TEFA) yang mengintegrasikan proses produksi atau layanan jasa ke dalam kurikulum pembelajaran.</p>
-                    <p>Melalui TEFA, siswa tidak hanya belajar teori tetapi juga mendapatkan pengalaman kerja riil sebelum lulus, mempersiapkan mereka untuk terjun langsung ke dunia industri atau berwirausaha.</p>
+             <div class="row text-center mb-4">
+                <div class="col-md-12">
+                    <h2 class="fw-bold">Visi & Misi TEFA</h2>
                 </div>
-                <div class="about-image">
-                    <!-- Placeholder untuk gambar sekolah -->
-                    <div style="width: 100%; height: 300px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; color: var(--gray);">
-                        <i class="fas fa-school" style="font-size: 3rem;"></i>
+            </div>
+            <div class="row align-items-stretch g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 p-4 border-0 shadow-sm border-start border-5 border-primary">
+                        <h3 class="h4"><i class="fas fa-bullseye text-primary me-2"></i>Visi</h3>
+                        <p class="mb-0">Menjadi pusat pengembangan kompetensi kejuruan yang berorientasi pada industri dan kewirausahaan.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 p-4 border-0 shadow-sm border-start border-5 border-success">
+                        <h3 class="h4"><i class="fas fa-list-check text-success me-2"></i>Misi</h3>
+                        <ol class="mb-0 ps-3">
+                            <li>Menyelenggarakan pembelajaran berbasis produksi dan layanan jasa.</li>
+                            <li>Mengembangkan kemitraan dengan industri dan dunia usaha.</li>
+                            <li>Menghasilkan lulusan yang kompeten dan berdaya saing global.</li>
+                        </ol>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Programs Section -->
-    <section class="programs" id="programs">
+    <section id="program">
         <div class="container">
-            <div class="section-title">
-                <h2>Program Keahlian</h2>
+            <h2 class="section-title">Tentang Program TEFA</h2>
+            <div class="row mb-5 justify-content-center">
+                <div class="col-lg-9 text-center">
+                    <p class="lead text-muted">TEFA SMKN 1 Gondang Nganjuk adalah model pembelajaran yang mengintegrasikan proses produksi atau layanan jasa ke dalam kurikulum. Siswa belajar sambil bekerja pada unit produksi/layanan yang sesungguhnya untuk pengalaman kerja riil.</p>
+                </div>
             </div>
-            <div class="programs-grid">
-                <!-- Program 1 -->
-                <div class="program-card">
-                    <div class="program-image">
-                        <!-- Placeholder untuk gambar program -->
-                        <div style="width: 100%; height: 100%; background-color: #4a7c59; display: flex; align-items: center; justify-content: center; color: white;">
-                            <i class="fas fa-laptop-code" style="font-size: 3rem;"></i>
+            
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 p-3 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="mb-3 text-primary"><i class="fas fa-user-graduate fa-3x"></i></div>
+                            <h5 class="card-title fw-bold">Bagi Siswa</h5>
+                            <p class="card-text">Pengalaman kerja riil, peningkatan kompetensi, dan peluang membangun portofolio profesional.</p>
                         </div>
                     </div>
-                    <div class="program-content">
-                        <h3>Teknik Komputer dan Jaringan</h3>
-                        <p>Jurusan ini berfokus pada ilmu dan keterampilan di bidang teknologi informasi, khususnya jaringan komputer.</p>
-                        <a href="#" class="program-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
-                    </div>
                 </div>
-                
-                <!-- Program 2 -->
-                <div class="program-card">
-                    <div class="program-image">
-                        <div style="width: 100%; height: 100%; background-color: #8b4513; display: flex; align-items: center; justify-content: center; color: white;">
-                            <i class="fas fa-tractor" style="font-size: 3rem;"></i>
+                <div class="col-md-4">
+                    <div class="card h-100 p-3 border-0 shadow-sm">
+                        <div class="card-body">
+                             <div class="mb-3 text-success"><i class="fas fa-school fa-3x"></i></div>
+                            <h5 class="card-title fw-bold">Bagi Sekolah</h5>
+                            <p class="card-text">Menjadi sumber pendapatan alternatif dan peningkatan kualitas pembelajaran secara keseluruhan.</p>
                         </div>
                     </div>
-                    <div class="program-content">
-                        <h3>Mekanisasi Pertanian</h3>
-                        <p>Menggabungkan prinsip-prinsip teknik mesin dengan ilmu pertanian untuk meningkatkan efisiensi usaha tani.</p>
-                        <a href="#" class="program-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
-                    </div>
                 </div>
-                
-                <!-- Program 3 -->
-                <div class="program-card">
-                    <div class="program-image">
-                        <div style="width: 100%; height: 100%; background-color: #d35400; display: flex; align-items: center; justify-content: center; color: white;">
-                            <i class="fas fa-motorcycle" style="font-size: 3rem;"></i>
+                <div class="col-md-4">
+                    <div class="card h-100 p-3 border-0 shadow-sm">
+                        <div class="card-body">
+                             <div class="mb-3 text-warning"><i class="fas fa-handshake fa-3x"></i></div>
+                            <h5 class="card-title fw-bold">Bagi Industri</h5>
+                            <p class="card-text">Memperoleh input tenaga kerja yang sudah terlatih dan membangun kemitraan strategis.</p>
                         </div>
                     </div>
-                    <div class="program-content">
-                        <h3>Teknik Sepeda Motor</h3>
-                        <p>Mempelajari perawatan, perbaikan mesin, sistem kelistrikan, dan tune-up performa sepeda motor.</p>
-                        <a href="#" class="program-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
-                    </div>
                 </div>
-                
-                <!-- Program 4 -->
-                <div class="program-card">
-                    <div class="program-image">
-                        <div style="width: 100%; height: 100%; background-color: #27ae60; display: flex; align-items: center; justify-content: center; color: white;">
-                            <i class="fas fa-egg" style="font-size: 3rem;"></i>
+            </div>
+        </div>
+    </section>
+
+    <section id="jurusan" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Unit Produksi & Jurusan</h2>
+            
+            <div class="d-flex align-items-center mb-4">
+                <i class="fas fa-cogs fa-2x text-primary me-3"></i>
+                <h3 class="mb-0 text-primary fw-bold">A. Bidang Teknologi & Rekayasa</h3>
+            </div>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card card-jurusan">
+                        <img src="images/tkj.png" class="card-img-top" alt="TEFA TKJ - Gondang Computer">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-primary">Gondang Computer & Network Solution (TKJ)</h5>
+                            <p class="card-text">Layanan: Perakitan PC, instalasi jaringan LAN/Wi-Fi, maintenance server, repair laptop.</p>
                         </div>
                     </div>
-                    <div class="program-content">
-                        <h3>Agribisnis Ternak Unggas</h3>
-                        <p>Berfokus pada cara beternak unggas secara efisien dan berwawasan bisnis.</p>
-                        <a href="#" class="program-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
-                    </div>
                 </div>
-                
-                <!-- Program 5 -->
-                <div class="program-card">
-                    <div class="program-image">
-                        <div style="width: 100%; height: 100%; background-color: #2980b9; display: flex; align-items: center; justify-content: center; color: white;">
-                            <i class="fas fa-car" style="font-size: 3rem;"></i>
+                <div class="col-md-4">
+                    <div class="card card-jurusan">
+                        <img src="images/tkr.png" class="card-img-top" alt="TEFA TKR - Gondang Auto Service">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-primary">Gondang Auto Service (TKR)</h5>
+                            <p class="card-text">Layanan: Servis berkala, tune-up, perbaikan mesin, perawatan rem & suspensi.</p>
                         </div>
                     </div>
-                    <div class="program-content">
-                        <h3>Teknik Kendaraan Ringan</h3>
-                        <p>Fokus pada kendaraan roda empat seperti mobil penumpang dan kendaraan komersial ringan.</p>
-                        <a href="#" class="program-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-jurusan">
+                        <img src="images/tsm.png" class="card-img-top" alt="TEFA TSM - Gondang Motor Workshop">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-primary">Gondang Motor Workshop (TSM)</h5>
+                            <p class="card-text">Layanan: Servis motor, perbaikan engine, perawatan CVT, kelistrikan sepeda motor.</p>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Program 6 -->
-                <div class="program-card">
-                    <div class="program-image">
-                        <div style="width: 100%; height: 100%; background-color: #8e44ad; dis
+            </div>
+
+            <div class="d-flex align-items-center mb-4 mt-5">
+                <i class="fas fa-leaf fa-2x text-success me-3"></i>
+                <h3 class="mb-0 text-success fw-bold">B. Bidang Agribisnis & Agroteknologi</h3>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card card-jurusan">
+                        <img src="images/atph.png" class="card-img-top" alt="TEFA ATPH">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-success">Gondang Farm & Nursery (ATPH)</h5>
+                            <p class="card-text small">Pembibitan tanaman pangan & hortikultura, produksi pupuk organik, konsultasi pertanian.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card card-jurusan">
+                        <img src="images/aphp.png" class="card-img-top" alt="TEFA APHP">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-success">Gondang Agro-Industry (APHP)</h5>
+                            <p class="card-text small">Produksi olahan pangan (keripik, dodol, sirup, dll.), pelatihan pengolahan hasil pertanian.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card card-jurusan">
+                        <img src="images/unggas.png" class="card-img-top" alt="TEFA Unggas">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-success">Gondang Poultry Farm (Unggas)</h5>
+                            <p class="card-text small">Penjualan telur & daging ayam, produksi pakan ternak, konsultasi kesehatan unggas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card card-jurusan">
+                        <img src="images/mekanisasi.png" class="card-img-top" alt="TEFA Mekanisasi">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-success">Gondang Agri-Tech Center</h5>
+                            <p class="card-text small">Service & perbaikan traktor & alat mesin pertanian, modifikasi alat pertanian.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeri">
+        <div class="container">
+            <h2 class="section-title">Galeri Kegiatan TEFA</h2>
+            <p class="text-center text-muted mb-5">Dokumentasi aktivitas siswa dan produk di berbagai unit TEFA.</p>
+            <div class="row g-3">
+                <div class="col-md-4 col-6">
+                    <img src="images/atph.png" class="gallery-img shadow-sm" alt="Kegiatan ATPH">
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="images/tkr.png" class="gallery-img shadow-sm" alt="Kegiatan TKR">
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="images/aphp.png" class="gallery-img shadow-sm" alt="Kegiatan APHP">
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="images/tsm.png" class="gallery-img shadow-sm" alt="Kegiatan TSM">
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="images/unggas.png" class="gallery-img shadow-sm" alt="Kegiatan Unggas">
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="images/tkj.png" class="gallery-img shadow-sm" alt="Kegiatan TKJ">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-5">
+                    <h3 class="fw-bold text-primary mb-4">Hubungi Kami</h3>
+                    <h5 class="mb-3">SMK Negeri 1 Gondang Nganjuk</h5>
+                    <div class="d-flex mb-3">
+                        <i class="fas fa-map-marker-alt text-primary mt-1 me-3"></i>
+                        <p class="mb-0">JL. Raya Gondang-Lengkong, Balongrejo, Balong Gebang, Kec. Gondang, Kab. Nganjuk, Jawa Timur. 64451.</p>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <i class="fas fa-phone text-primary mt-1 me-3"></i>
+                        <p class="mb-0">(0358) XXXXXXX [Isi Nomor Telepon]</p>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <i class="fas fa-envelope text-primary mt-1 me-3"></i>
+                        <p class="mb-0">info@smkn1gondang.sch.id [Isi Email]</p>
+                    </div>
+                     <div class="d-flex mb-3 align-items-center">
+                        <i class="fab fa-instagram text-primary fa-lg me-3"></i>
+                        <a href="https://www.instagram.com/smknegeri1gondangnganjuk/?utm_source=ig_web_button_share_sheet" class="text-white text-decoration-none link-primary" target="_blank">@smknegeri1gondangnganjuk</a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="ratio ratio-16x9 shadow rounded overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.267315473876!2d112.0807379757454!3d-7.435629673259365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e783f7346360a09%3A0x416401892131440!2sSMK%20Negeri%201%20Gondang!5e0!3m2!1sid!2sid!4v1715670000000!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <div class="mb-4">
+                </div>
+            <div class="mb-3 social-icons">
+                <a href="#" class="text-white text-decoration-none me-4"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="https://www.instagram.com/smknegeri1gondangnganjuk/"
