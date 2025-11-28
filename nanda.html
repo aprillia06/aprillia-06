@@ -1,19 +1,20 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEFA SMKN 1 Gondang Nganjuk</title>
+    <title>TEFA SMKN 1 Gondang Nganjuk (Ungu Pastel)</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* CSS Kustom */
+        /* CSS Kustom - SKEMA UNGU PASTEL */
         :root {
-            --primary-color: #0d6efd; /* Biru Standar */
-            --secondary-color: #198754; /* Hijau untuk nuansa Agri */
-            --dark-color: #343a40;
+            --primary-color: #8A2BE2; /* Ungu Primer/Aksen (Blue Violet) */
+            --pastel-primary: #C3B1E1; /* Ungu Pastel Lembut */
+            --dark-color: #4B0082; /* Indigo/Ungu Tua untuk teks dan footer */
+            --text-muted-soft: #6A5ACD; /* Ungu untuk teks sekunder */
+            --bg-light: #F8F0FF; /* Latar belakang lembut */
         }
 
         body {
@@ -27,11 +28,14 @@
             display: flex;
             align-items: center;
         }
+        .nav-link.active, .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
 
         /* Hero Section */
         .hero-section {
-            /* Menggunakan gambar gedung sekolah (hero-bg.png) */
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.png');
+            /* MENGGUNAKAN GAMBAR LAMA (hero-bg.png) - pastikan file ini ada di folder 'images' */
+            background: linear-gradient(rgba(75, 0, 130, 0.7), rgba(75, 0, 130, 0.7)), url('images/hero-bg.png');
             background-size: cover;
             background-position: center;
             height: 80vh;
@@ -47,10 +51,24 @@
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
+        
+        /* Tombol Utama */
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: var(--dark-color);
+            border-color: var(--dark-color);
+        }
 
         /* Section Styling */
         section {
             padding: 60px 0;
+        }
+        .bg-light {
+            background-color: var(--bg-light) !important;
         }
 
         .section-title {
@@ -66,8 +84,23 @@
             display: block;
             width: 60px;
             height: 3px;
-            background: var(--primary-color);
+            background: var(--primary-color); /* Aksen Ungu */
             margin: 10px auto;
+        }
+
+        /* Kelas Warna Disesuaikan */
+        .text-primary, .border-primary { 
+            color: var(--primary-color) !important; 
+            border-color: var(--primary-color) !important; 
+        }
+        .text-success, .border-success { 
+            color: var(--text-muted-soft) !important; 
+            border-color: var(--text-muted-soft) !important; 
+        }
+
+        /* Visi Misi Cards */
+        .card .border-start {
+             border-width: 5px !important;
         }
 
         /* Cards untuk Jurusan */
@@ -84,7 +117,7 @@
         }
         
         .card-jurusan .card-img-top {
-            height: 220px; /* Tinggi gambar seragam */
+            height: 220px;
             object-fit: cover;
             object-position: center;
         }
@@ -103,9 +136,12 @@
 
         /* Footer */
         footer {
-            background-color: #212529;
+            background-color: var(--dark-color);
             color: white;
             padding: 40px 0 20px;
+        }
+        footer .text-muted {
+            color: var(--pastel-primary) !important;
         }
     </style>
 </head>
@@ -173,7 +209,7 @@
             <h2 class="section-title">Tentang Program TEFA</h2>
             <div class="row mb-5 justify-content-center">
                 <div class="col-lg-9 text-center">
-                    <p class="lead text-muted">TEFA SMKN 1 Gondang Nganjuk adalah model pembelajaran yang mengintegrasikan proses produksi atau layanan jasa ke dalam kurikulum. Siswa belajar sambil bekerja pada unit produksi/layanan yang sesungguhnya untuk pengalaman kerja riil.</p>
+                    <p class="lead" style="color: var(--text-muted-soft);">TEFA SMKN 1 Gondang Nganjuk adalah model pembelajaran yang mengintegrasikan proses produksi atau layanan jasa ke dalam kurikulum. Siswa belajar sambil bekerja pada unit produksi/layanan yang sesungguhnya untuk pengalaman kerja riil.</p>
                 </div>
             </div>
             
@@ -268,7 +304,7 @@
                         <img src="foto 8.jpeg" class="card-img-top" alt="TEFA APHP">
                         <div class="card-body">
                             <h5 class="card-title fw-bold text-success">Gondang Agro-Industry (APHP)</h5>
-                            <p class="card-text small">Produksi olahan pangan (keripik, dodol, sirup, dll.), pelatihan pengolahan hasil pertanian.</p>
+                            <p class="card-text small">Produksi olahan pangan, pelatihan pengolahan hasil pertanian.</p>
                         </div>
                     </div>
                 </div>
@@ -277,7 +313,7 @@
                         <img src="foto 1 (3).jpeg" class="card-img-top" alt="TEFA Unggas">
                         <div class="card-body">
                             <h5 class="card-title fw-bold text-success">Gondang Poultry Farm (Unggas)</h5>
-                            <p class="card-text small">Penjualan telur & daging ayam, produksi pakan ternak, konsultasi kesehatan unggas.</p>
+                            <p class="card-text small">Penjualan telur & daging ayam, pemvaksinan ayam, konsultasi kesehatan unggas.</p>
                         </div>
                     </div>
                 </div>
@@ -297,7 +333,7 @@
     <section id="galeri">
         <div class="container">
             <h2 class="section-title">Galeri Kegiatan TEFA</h2>
-            <p class="text-center text-muted mb-5">Dokumentasi aktivitas siswa dan produk di berbagai unit TEFA.</p>
+            <p class="text-center" style="color: var(--text-muted-soft);">Dokumentasi aktivitas siswa dan produk di berbagai unit TEFA.</p>
             <div class="row g-3">
                 <div class="col-md-4 col-6">
                     <img src="foto 4 (2).jpeg" class="gallery-img shadow-sm" alt="Kegiatan ATPH">
@@ -321,27 +357,27 @@
         </div>
     </section>
 
-    <section id="kontak" class="bg-dark text-white py-5">
+    <section id="kontak" class="py-5" style="background-color: var(--dark-color);">
         <div class="container">
             <div class="row gy-4">
                 <div class="col-lg-5">
-                    <h3 class="fw-bold text-primary mb-4">Hubungi Kami</h3>
-                    <h5 class="mb-3">SMK Negeri 1 Gondang Nganjuk</h5>
+                    <h3 class="fw-bold mb-4" style="color: var(--pastel-primary);">Hubungi Kami</h3>
+                    <h5 class="mb-3 text-white">SMK Negeri 1 Gondang Nganjuk</h5>
                     <div class="d-flex mb-3">
-                        <i class="fas fa-map-marker-alt text-primary mt-1 me-3"></i>
-                        <p class="mb-0">JL. Raya Gondang-Lengkong, Balongrejo, Balong Gebang, Kec. Gondang, Kab. Nganjuk, Jawa Timur. 64451.</p>
+                        <i class="fas fa-map-marker-alt mt-1 me-3" style="color: var(--pastel-primary);"></i>
+                        <p class="mb-0 text-white">JL. Raya Gondang-Lengkong, Balongrejo, Balong Gebang, Kec. Gondang, Kab. Nganjuk, Jawa Timur. 64451.</p>
                     </div>
                     <div class="d-flex mb-3">
-                        <i class="fas fa-phone text-primary mt-1 me-3"></i>
-                        <p class="mb-0">(0358) XXXXXXX [Isi Nomor Telepon]</p>
+                        <i class="fas fa-phone mt-1 me-3" style="color: var(--pastel-primary);"></i>
+                        <p class="mb-0 text-white">(0358) 611 606</p>
                     </div>
                     <div class="d-flex mb-3">
-                        <i class="fas fa-envelope text-primary mt-1 me-3"></i>
-                        <p class="mb-0">info@smkn1gondang.sch.id [Isi Email]</p>
+                        <i class="fas fa-envelope mt-1 me-3" style="color: var(--pastel-primary);"></i>
+                        <p class="mb-0 text-white">smkn1gondang@yahoo.co.id</p>
                     </div>
                      <div class="d-flex mb-3 align-items-center">
-                        <i class="fab fa-instagram text-primary fa-lg me-3"></i>
-                        <a href="https://www.instagram.com/smknegeri1gondangnganjuk/?utm_source=ig_web_button_share_sheet" class="text-white text-decoration-none link-primary" target="_blank">@smknegeri1gondangnganjuk</a>
+                        <i class="fab fa-instagram fa-lg me-3" style="color: var(--pastel-primary);"></i>
+                        <a href="https://www.instagram.com/smknegeri1gondangnganjuk/?utm_source=ig_web_button_share_sheet" class="text-white text-decoration-none" target="_blank">@smknegeri1gondangnganjuk</a>
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -355,8 +391,16 @@
 
     <footer>
         <div class="container text-center">
-            <div class="mb-4">
-                </div>
             <div class="mb-3 social-icons">
-                <a href="#" class="text-white text-decoration-none me-4"><i class="fab fa-facebook fa-lg"></i></a>
-                <a href="https://www.instagram.com/smknegeri1gondangnganjuk/"
+                <a href="#" class="text-white text-decoration-none me-4"><i class="fab fa-facebook fa-lg"></i></a> 
+                <a href="https://www.instagram.com/smknegeri1gondangnganjuk/" target="_blank" class="text-white text-decoration-none me-4"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-white text-decoration-none"><i class="fab fa-youtube fa-lg"></i></a>
+            </div>
+            <hr class="w-50 mx-auto my-4" style="border-color: var(--text-muted-soft) !important;">
+            <p class="small text-muted mb-0">Hak Cipta © 2024 TEFA SMKN 1 Gondang Nganjuk. <br>Dibuat untuk tujuan pendidikan.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
