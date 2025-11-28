@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEFA SMKN 1 Gondang Nganjuk</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* CSS Kustom */
+        :root {
+            --primary-color: #0d6efd; /* Biru Standar */
+            --secondary-color: #198754; /* Hijau untuk nuansa Agri */
+            --dark-color: #343a40;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Navbar */
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--dark-color) !important;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            /* Menggunakan gambar gedung sekolah (hero-bg.png) */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 10px auto;
+        }
+
+        /* Cards untuk Jurusan */
+        .card-jurusan {
+            transition: transform 0.3s;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+
+        .card-jurusan:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        .card-jurusan .card-img-top {
+            height: 220px; /* Tinggi gambar seragam */
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Galeri Images */
+        .gallery-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: opacity 0.3s;
+        }
+        .gallery-img:hover {
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #212529;
+            color: white;
+            padding: 40px 0 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="foto 3 (1).jpeg" alt="Logo SMKN 1 Gondang" height="50" class="d-inline-block align-text-center me-2">
+                SMKN 1 Gondang
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-semibold">
+                    <li class="nav-item"><a class="nav-link active" href="#beranda">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#program">Program TEFA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#jurusan">Jurusan & Unit</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="beranda" class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Teaching Factory SMK Negeri 1 Gondang Nganjuk</h1>
+            <p class="lead mt-3 fw-normal">Mempersiapkan Generasi Terampil, Siap Kerja, dan Berwirausaha</p>
+            <a href="#jurusan" class="btn btn-primary btn-lg mt-4 shadow">Lihat Unit TEFA</a>
+        </div>
+    </header>
+
+    <section class="bg-light py-5">
+        <div class="container">
+             <div class="row text-center mb-4">
+                <div class="col-md-12">
+                    <h2 class="fw-bold">Visi & Misi TEFA</h2>
+                </div>
+            </div>
+            <div class="row align-items-stretch g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 p-4 border-0 shadow-sm border-start border-5 border-primary">
+                        <h3 class="h4"><i class="fas fa-bullseye text-primary me-2"></i>Visi</h3>
+                        <p class="mb-0">Menjadi pusat pengembangan kompetensi kejuruan yang berorientasi pada industri dan kewirausahaan.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 p-4 border-0 shadow-sm border-start border-5 border-success">
+                        <h3 class="h4"><i class="fas fa-list-check text-success me-2"></i>Misi</h3>
+                        <ol class="mb-0 ps-3">
+                            <li>Menyelenggarakan pembelajaran berbasis produksi dan layanan jasa.</li>
+                            <li>Mengembangkan kemitraan dengan industri dan dunia usaha.</li>
+                            <li>Menghasilkan lulusan yang kompeten dan berdaya saing global.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="program">
+        <div class="container">
+            <h2 class="section-title">Tentang Program TEFA</h2>
+            <div class="row mb-5 justify-content-center">
+                <div class="col-lg-9 text-center">
+                    <p class="lead text-muted">TEFA SMKN 1 Gondang Nganjuk adalah model pembelajaran yang mengintegrasikan proses produksi atau layanan jasa ke dalam kurikulum. Siswa belajar sambil bekerja pada unit produksi/layanan yang sesungguhnya untuk pengalaman kerja riil.</p>
+                </div>
+            </div>
+            
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 p-3 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="mb-3 text-primary"><i class="fas fa-user-graduate fa-3x"></i></div>
+                            <h5 class="card-title fw-bold">Bagi Siswa</h5>
+                            <p class="card-text">Pengalaman kerja riil, peningkatan kompetensi, dan peluang membangun portofolio profesional.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 p-3 border-0 shadow-sm">
+                        <div class="card-body">
+                             <div class="mb-3 text-success"><i class="fas fa-school fa-3x"></i></div>
+                            <h5 class="card-title fw-bold">Bagi Sekolah</h5>
+                            <p class="card-text">Menjadi sumber pendapatan alternatif dan peningkatan kualitas pembelajaran secara keseluruhan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 p-3 border-0 shadow-sm">
+                        <div class="card-body">
+                             <div class="mb-3 text-warning"><i class="fas fa-handshake fa-3x"></i></div>
+                            <h5 class="card-title fw-bold">Bagi Industri</h5>
+                            <p class="card-text">Memperoleh input tenaga kerja yang sudah terlatih dan membangun kemitraan strategis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="jurusan" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Unit Produksi & Jurusan</h2>
+            
+            <div class="d-flex align-items-center mb-4">
+                <i class="fas fa-cogs fa-2x text-primary me-3"></i>
+                <h3 class="mb-0 text-primary fw-bold">A. Bidang Teknologi & Rekayasa</h3>
+            </div>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card card-jurusan">
+                        <img src="foto 7 (8).jpeg" class="card-img-top" alt="TEFA TKJ - Gondang Computer">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-primary">Gondang Computer & Network Solution (TKJ)</h5>
+                            <p class="card-text">Layanan: Perakitan PC, instalasi jaringan LAN/Wi-Fi, maintenance server, repair laptop.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-jurusan">
+                        <img src="foto 5 (6).jpeg" class="card-img-top" alt="TEFA TKR - Gondang Auto Service">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-primary">Gondang Auto Service (TKR)</h5>
+                            <p class="card-text">Layanan: Servis berkala, tune-up, perbaikan mesin, perawatan rem & suspensi.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-jurusan">
+                        <img src="foto 2 (4).jpeg" class="card-img-top" alt="TEFA TSM - Gondang Motor Workshop">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-primary">Gondang Motor Workshop (TSM)</h5>
+                            <p class="card-text">Layanan: Servis motor, perbaikan engine, perawatan CVT, kelistrikan sepeda motor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center mb-4 mt-5">
+                <i class="fas fa-leaf fa-2x text-success me-3"></i>
+                <h3 class="mb-0 text-success fw-bold">B. Bidang Agribisnis & Agroteknologi</h3>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card card-jurusan">
+                        <img src="foto 4 (2).jpeg" class="card-img-top" alt="TEFA ATPH">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-success">Gondang Farm & Nursery (ATPH)</h5>
+                            <p class="card-text small">Pembibitan tanaman pangan & hortikultura, produksi pupuk organik, konsultasi pertanian.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card card-jurusan">
+                        <img src="foto 8.jpeg" class="card-img-top" alt="TEFA APHP">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-success">Gondang Agro-Industry (APHP)</h5>
+                            <p class="card-text small">Produksi olahan pangan (keripik, dodol, sirup, dll.), pelatihan pengolahan hasil pertanian.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card card-jurusan">
+                        <img src="foto 1 (3).jpeg" class="card-img-top" alt="TEFA Unggas">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-success">Gondang Poultry Farm (Unggas)</h5>
+                            <p class="card-text small">Penjualan telur & daging ayam, produksi pakan ternak, konsultasi kesehatan unggas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card card-jurusan">
+                        <img src="foto 6 (7).jpeg" class="card-img-top" alt="TEFA Mekanisasi">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-success">Gondang Agri-Tech Center</h5>
+                            <p class="card-text small">Service & perbaikan traktor & alat mesin pertanian, modifikasi alat pertanian.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeri">
+        <div class="container">
+            <h2 class="section-title">Galeri Kegiatan TEFA</h2>
+            <p class="text-center text-muted mb-5">Dokumentasi aktivitas siswa dan produk di berbagai unit TEFA.</p>
+            <div class="row g-3">
+                <div class="col-md-4 col-6">
+                    <img src="foto 4 (2).jpeg" class="gallery-img shadow-sm" alt="Kegiatan ATPH">
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="foto 5 (6).jpeg" class="gallery-img shadow-sm" alt="Kegiatan TKR">
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="foto 8.jpeg" class="gallery-img shadow-sm" alt="Kegiatan APHP">
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="foto 2 (4).jpeg" class="gallery-img shadow-sm" alt="Kegiatan TSM">
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="foto 1 (3).jpeg" class="gallery-img shadow-sm" alt="Kegiatan Unggas">
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="foto 7 (8).jpeg" class="gallery-img shadow-sm" alt="Kegiatan TKJ">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-5">
+                    <h3 class="fw-bold text-primary mb-4">Hubungi Kami</h3>
+                    <h5 class="mb-3">SMK Negeri 1 Gondang Nganjuk</h5>
+                    <div class="d-flex mb-3">
+                        <i class="fas fa-map-marker-alt text-primary mt-1 me-3"></i>
+                        <p class="mb-0">JL. Raya Gondang-Lengkong, Balongrejo, Balong Gebang, Kec. Gondang, Kab. Nganjuk, Jawa Timur. 64451.</p>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <i class="fas fa-phone text-primary mt-1 me-3"></i>
+                        <p class="mb-0">(0358) XXXXXXX [Isi Nomor Telepon]</p>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <i class="fas fa-envelope text-primary mt-1 me-3"></i>
+                        <p class="mb-0">info@smkn1gondang.sch.id [Isi Email]</p>
+                    </div>
+                     <div class="d-flex mb-3 align-items-center">
+                        <i class="fab fa-instagram text-primary fa-lg me-3"></i>
+                        <a href="https://www.instagram.com/smknegeri1gondangnganjuk/?utm_source=ig_web_button_share_sheet" class="text-white text-decoration-none link-primary" target="_blank">@smknegeri1gondangnganjuk</a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="ratio ratio-16x9 shadow rounded overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.267315473876!2d112.0807379757454!3d-7.435629673259365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e783f7346360a09%3A0x416401892131440!2sSMK%20Negeri%201%20Gondang!5e0!3m2!1sid!2sid!4v1715670000000!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <div class="mb-4">
+                </div>
+            <div class="mb-3 social-icons">
+                <a href="#" class="text-white text-decoration-none me-4"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="https://www.instagram.com/smknegeri1gondangnganjuk/"
